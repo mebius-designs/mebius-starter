@@ -1,0 +1,98 @@
+/* Forms theme (forms-theme): what `npx shadcn@latest add` merges into your globals.css. Tokens for the free form blocks: the Figma "color/*" variables of the system-style forms (canvas, surfaces, borders, text, accent, success, warning, pro, inverse) as form-* Tailwind colours, plus form-danger for errors (the Figma variables have no red yet), a font-form-* family utility for every typeface the forms are drawn in, and hug-w (text boxes rounded up to whole pixels like Figma's hug width). Light values in :root and dark in .dark (your app's dark class), from the Figma's light and dark forms; each form also switches its own palette with that class. Every name starts with form-, so installing it never changes your app's own colours or fonts. */
+
+@theme inline {
+  --color-form-canvas: var(--form-canvas);
+  --color-form-surface: var(--form-surface);
+  --color-form-surface-2: var(--form-surface-2);
+  --color-form-surface-3: var(--form-surface-3);
+  --color-form-border: var(--form-border);
+  --color-form-border-strong: var(--form-border-strong);
+  --color-form-text: var(--form-text);
+  --color-form-text-2: var(--form-text-2);
+  --color-form-text-3: var(--form-text-3);
+  --color-form-accent: var(--form-accent);
+  --color-form-accent-soft: var(--form-accent-soft);
+  --color-form-success: var(--form-success);
+  --color-form-success-soft: var(--form-success-soft);
+  --color-form-warning: var(--form-warning);
+  --color-form-warning-soft: var(--form-warning-soft);
+  --color-form-danger: var(--form-danger);
+  --color-form-danger-soft: var(--form-danger-soft);
+  --color-form-pro: var(--form-pro);
+  --color-form-pro-soft: var(--form-pro-soft);
+  --color-form-inverse: var(--form-inverse);
+  --color-form-on-inverse: var(--form-on-inverse);
+  --color-form-primary: var(--form-primary);
+  --color-form-muted: var(--form-muted);
+  --font-form-geist: var(--font-geist-sans, "Geist Variable"), "Geist", ui-sans-serif, system-ui, sans-serif;
+  --font-form-geist-mono: var(--font-geist-mono, "Geist Mono Variable"), "Geist Mono", ui-monospace, monospace;
+  --font-form-inter: var(--font-inter, "Inter Variable"), "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-form-space-mono: var(--font-space-mono, "Space Mono"), ui-monospace, monospace;
+  --font-form-archivo-black: var(--font-archivo-black, "Archivo Black"), ui-sans-serif, system-ui, sans-serif;
+  --font-form-doto: var(--font-doto, "Doto Variable"), "Doto", ui-monospace, monospace;
+  --font-form-vt323: var(--font-vt323, "VT323"), ui-monospace, monospace;
+  --font-form-martian-mono: var(--font-martian-mono, "Martian Mono Variable"), "Martian Mono", ui-monospace, monospace;
+  --font-form-montserrat: var(--font-montserrat, "Montserrat Variable"), "Montserrat", ui-sans-serif, system-ui, sans-serif;
+  --font-form-jetbrains-mono: var(--font-jetbrains-mono, "JetBrains Mono Variable"), "JetBrains Mono", ui-monospace, monospace;
+  --font-form-instrument-sans: var(--font-instrument-sans, "Instrument Sans Variable"), "Instrument Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-form-fraunces: var(--font-fraunces, "Fraunces Variable"), "Fraunces", ui-serif, Georgia, serif;
+  --font-form-bricolage: var(--font-bricolage-grotesque, "Bricolage Grotesque Variable"), "Bricolage Grotesque", ui-sans-serif, system-ui, sans-serif;
+  --font-form-silkscreen: var(--font-silkscreen, "Silkscreen"), ui-monospace, monospace;
+  --font-form-pixelify: var(--font-pixelify-sans, "Pixelify Sans Variable"), "Pixelify Sans", ui-sans-serif, system-ui, sans-serif;
+}
+
+:root {
+  --form-canvas: #f4f5f7;
+  --form-surface: #ffffff;
+  --form-surface-2: #f7f7f8;
+  --form-surface-3: #eeeef0;
+  --form-border: #e4e4e7;
+  --form-border-strong: #d5d5d9;
+  --form-text: #18181b;
+  --form-text-2: #55555e;
+  --form-text-3: #7a7a85;
+  --form-accent: #4d7cfe;
+  --form-accent-soft: #4d7cfe24;
+  --form-success: #3dd68c;
+  --form-success-soft: #3dd68c1f;
+  --form-warning: #a0660d;
+  --form-warning-soft: #f5b4511f;
+  --form-danger: #dc2626;
+  --form-danger-soft: #f871711f;
+  --form-pro: #6138fa;
+  --form-pro-soft: #8b5cf629;
+  --form-inverse: #1b1b1d;
+  --form-on-inverse: #f3f3f4;
+  --form-primary: #1a1a1a;
+  --form-muted: #73737d;
+}
+
+.dark {
+  --form-canvas: #0b0b0c;
+  --form-surface: #141416;
+  --form-surface-2: #1b1b1e;
+  --form-surface-3: #232327;
+  --form-border: #27272b;
+  --form-border-strong: #34343a;
+  --form-text: #f4f4f5;
+  --form-text-2: #a1a1aa;
+  --form-text-3: #6b6b74;
+  --form-accent: #4d7cfe;
+  --form-accent-soft: #4d7cfe24;
+  --form-success: #3dd68c;
+  --form-success-soft: #3dd68c1f;
+  --form-warning: #f5b451;
+  --form-warning-soft: #f5b4511f;
+  --form-danger: #f87171;
+  --form-danger-soft: #f871711f;
+  --form-pro: #c4b5fd;
+  --form-pro-soft: #8b5cf629;
+  --form-inverse: #f4f4f5;
+  --form-on-inverse: #0b0b0c;
+  --form-primary: #f5f5f5;
+  --form-muted: #82828c;
+}
+
+@utility hug-w {
+  width: calc-size(fit-content, round(up, size, 1px));
+}
