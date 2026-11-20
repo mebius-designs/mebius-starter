@@ -94,6 +94,7 @@ The items' source exactly as `npx shadcn@latest add` installs it, so you can rea
 | `lib/` | Number formatting, chart series helpers and shadcn's `cn()` |
 | `styles/` | Each kit's theme variables, which the CLI merges into your `globals.css` |
 | `components.json` | An example config with the `@mebius` registry |
+| `AGENTS.md`, `CLAUDE.md`, `.cursor/rules/mebius.mdc` | Install rules for AI coding agents (Codex, Claude Code, Cursor) |
 
 The charts' variables are scoped to the charts (`data-charts`), so they never change your app's own colours. The forms
 come in light and dark.
@@ -130,6 +131,11 @@ claude mcp add --transport http mebius https://www.mebius.design/api/mcp
 ```
 
 Setup for other clients and access tokens: [mebius.design/settings/tokens](https://www.mebius.design/settings/tokens).
+
+To make your agent install mebius items the right way (the kit theme on its own first, then items with `--overwrite`),
+copy the install sections of [AGENTS.md](AGENTS.md) into your project's AGENTS.md, or
+[.cursor/rules/mebius.mdc](.cursor/rules/mebius.mdc) for Cursor. Claude Code reads AGENTS.md through a `CLAUDE.md` that
+contains `@AGENTS.md`.
 
 mebius.design also sells Figma UI kits for dashboards, mobile apps and websites with the matching React + Tailwind code
 for shadcn.

@@ -1,0 +1,15 @@
+---
+description: Use when adding mebius.design charts, forms or UI kit items (the @mebius shadcn registry) with the shadcn CLI or the mebius MCP server
+globs: components.json
+alwaysApply: false
+---
+
+# Installing mebius.design items
+
+- Open starter items (the 20 in README.md, MIT) need no account, token or registry entry: `npx shadcn@latest add https://www.mebius.design/r/<name>.json`.
+- Every other item needs the token-gated registry. The user puts `MEBIUS_TOKEN=…` from https://www.mebius.design/settings/tokens in `.env.local` (never in chat or git), and components.json gets `"@mebius": { "url": "https://www.mebius.design/r/{name}.json", "headers": { "Authorization": "Bearer ${MEBIUS_TOKEN}" } }` under `"registries"`.
+- Add the kit theme on its own first: `npx shadcn@latest add @mebius/<kit>-theme` (charts-theme, forms-theme, forms-pro-theme, relivo-theme…).
+- Then each item with `--overwrite`: `npx shadcn@latest add @mebius/<name> --overwrite`.
+- Item names start with their kit (`charts-ethereum`, `relivo-button`). Registry dependencies are written `@mebius/<name>`.
+- With the mebius MCP server (https://www.mebius.design/api/mcp) connected, `get_install_instructions` gives the exact commands, and `get_item` gives every file with its target path for writing files by hand.
+- Full rules: AGENTS.md in the mebius starter repository.
